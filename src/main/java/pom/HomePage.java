@@ -10,10 +10,10 @@ import java.time.Duration;
 public class HomePage {
     protected static WebDriver driver;
     private final String parentPath = "/parent::div";
-    private final String sauseTabPath = ".//span[text()='Соусы']";
+    private final String saucesTabPath = ".//span[text()='Соусы']";
     private final String fillingsTabPath = ".//span[text()='Начинки']";
     private final String bunsTabPath = ".//span[text()='Булки']";
-    private final String sauseTabParentPath = sauseTabPath + parentPath;
+    private final String saucesTabParentPath = saucesTabPath + parentPath;
     private final String fillingsTabParentPath = fillingsTabPath + parentPath;
     private final String bunsTabParentPath = bunsTabPath + parentPath;
     private final By personalAccountButton = By.xpath(".//a[@href='/account']");
@@ -23,10 +23,10 @@ public class HomePage {
     private final By logo = By.xpath(".//div/a[@href='/']");
     private final By constructBurger = By.xpath(".//section[@class='BurgerIngredients_ingredients__1N8v2']");
     private final By bunsTab = By.xpath(bunsTabPath);
-    private final By sauceTab = By.xpath(sauseTabPath);
+    private final By sauceTab = By.xpath(saucesTabPath);
     private final By fillingsTab = By.xpath(fillingsTabPath);
     private final By bunsTabParent = By.xpath(bunsTabParentPath);
-    private final By sauceTabParent = By.xpath(sauseTabParentPath);
+    private final By saucesTabParent = By.xpath(saucesTabParentPath);
     private final By fillingsTabParent = By.xpath(fillingsTabParentPath);
 
     public HomePage() {
@@ -74,7 +74,7 @@ public class HomePage {
 
     @Step("Get attribute class of Sauces")
     public String getClassSauceTab() {
-        return getFieldAttribute(sauceTabParent, "class");
+        return getFieldAttribute(saucesTabParent, "class");
     }
 
     @Step("Get attribute class of Fillings")
