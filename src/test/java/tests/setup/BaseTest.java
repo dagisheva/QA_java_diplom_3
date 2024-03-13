@@ -15,7 +15,7 @@ public class BaseTest {
 
     @Before
     public void startUp() {
-        driver = new Browser().getWebDriver(/*System.getProperty("property")*/"chrome"/*"yandex"*/);
+        driver = new Browser().getWebDriver(/*System.getProperty("property")*//*"chrome"*/"yandex");
         driver.get(baseUri);
         RestAssured.baseURI = baseUri;
         homePage = new HomePage(driver);

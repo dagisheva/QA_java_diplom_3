@@ -29,7 +29,7 @@ public class Browser {
     }
 
     public WebDriver returnYandex() {
-        System.setProperty("webdriver.chrome.driver", yandexBrowserPath);
+        System.setProperty("webdriver.chrome.driver", yandexDriverPath);
         ChromeOptions options = new ChromeOptions();
         options.setBinary(yandexBrowserPath);
         options.addArguments("--remote-allow-origins=*");
