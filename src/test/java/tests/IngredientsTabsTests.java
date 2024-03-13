@@ -14,7 +14,7 @@ public class IngredientsTabsTests extends BaseTest {
     public void navigateBunsTest() {
         //опытным путём было выяснено, что только после перехода на вкладку с соусами остальное отрабатывает корректно,
         //если все тесты запускать, а не по одному
-        homePage.goToSauseTab();
+        homePage.goToSaucesTab();
         homePage.goToBunsTab();
         String classBuns = homePage.getClassBunsTab();
         Assert.assertTrue("ActiveTabIdentifier should be present", classBuns.contains(activeTabIdentifier));
@@ -23,7 +23,7 @@ public class IngredientsTabsTests extends BaseTest {
     @Test
     @DisplayName("Navigate Sauces tab test")
     public void navigateSaucesTab() {
-        homePage.goToSauseTab();
+        homePage.goToSaucesTab();
         String classSauce = homePage.getClassSauceTab();
         Assert.assertTrue("ActiveTabIdentifier should be present", classSauce.contains(activeTabIdentifier));
     }
@@ -31,7 +31,7 @@ public class IngredientsTabsTests extends BaseTest {
     @Test
     @DisplayName("Navigate Fillings tab test")
     public void navigateFillingsTab() {
-        homePage.goToSauseTab();
+        homePage.goToSaucesTab();
         homePage.goToFillingsTab();
         String classFillings = homePage.getClassFillingsTab();
         Assert.assertTrue("ActiveTabIdentifier should be present", classFillings.contains(activeTabIdentifier));

@@ -20,7 +20,7 @@ public class PersonalAccountTests extends BaseLoginTest {
         homePage.clickPersonalAccountButton();
         loginPage = new LoginPage(driver);
         loginPage.fillLoginDataAndLogin(email, password);
-        homePage.clickPersAccWhenObscured();
+        homePage.clickPersonalAccountButton();
         personalAccountPage = new PersonalAccountPage(driver);
         personalAccountPage.waitForExitButton();
     }

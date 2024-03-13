@@ -1,12 +1,11 @@
 package tests.setup;
 
+import helpers.Browser;
 import helpers.Config;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pom.HomePage;
 
 public class BaseTest {
@@ -16,8 +15,7 @@ public class BaseTest {
 
     @Before
     public void startUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new Browser().getWebDriver(System.getProperty("property")/*"chrome"*//*"yandex"*/);
         driver.get(baseUri);
         RestAssured.baseURI = baseUri;
         homePage = new HomePage(driver);

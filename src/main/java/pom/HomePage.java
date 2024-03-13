@@ -50,7 +50,6 @@ public class HomePage {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             expectedElement = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
         } catch (TimeoutException e) {
-            // Handle the timeout gracefully, e.g., log a message
             System.out.println("Element with locator " + element + " not found within the specified timeout.");
         }
         return expectedElement;
@@ -63,42 +62,37 @@ public class HomePage {
         elementToFill.sendKeys(data);
     }
 
-    public void clickElementWhenObscured(By element) {
-        WebElement webElement = driver.findElement(element);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", webElement);
-    }
-
     public String getFieldAttribute(By element, String attribute) {
         WebElement webElement = driver.findElement(element);
         return webElement.getAttribute(attribute);
     }
 
-    @Step
+    @Step("Get attribute class of Buns")
     public String getClassBunsTab() {
         return getFieldAttribute(bunsTabParent, "class");
     }
 
-    @Step
+    @Step("Get attribute class of Sauces")
     public String getClassSauceTab() {
         return getFieldAttribute(sauceTabParent, "class");
     }
 
-    @Step
+    @Step("Get attribute class of Fillings")
     public String getClassFillingsTab() {
         return getFieldAttribute(fillingsTabParent, "class");
     }
 
-    @Step
+    @Step("Go to Fillings tab")
     public void goToFillingsTab() {
         clickOnElement(fillingsTab);
     }
 
-    @Step
-    public void goToSauseTab() {
+    @Step("Go to Sauces tab")
+    public void goToSaucesTab() {
         clickOnElement(sauceTab);
     }
 
-    @Step
+    @Step("Go to Buns tab")
     public void goToBunsTab() {
         clickOnElement(bunsTab);
     }
@@ -121,11 +115,6 @@ public class HomePage {
     @Step("Wait for PersonalAccoutn button")
     public void waitForPersonalAccountButton() {
         waitForElementToBeVisible(personalAccountButton);
-    }
-
-    @Step("Scroll personal account to view")
-    public void clickPersAccWhenObscured() {
-        clickElementWhenObscured(personalAccountButton);
     }
 
     @Step("Click Constructor button")
