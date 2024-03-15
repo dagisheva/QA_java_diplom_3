@@ -5,9 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Browser {
-    private String chromeDriverPath = Config.returnChromeDriverPath();
-    private String yandexDriverPath = Config.returnYandexDriverPath();
-    private String yandexBrowserPath = Config.returnYandexBrowserPath();
+    private String chromeDriverPath = Config.CHROMEDRIVER_PATH;
+    private String yandexDriverPath = Config.YANDEXDRIVER_PATH;
+    private String yandexBrowserPath = Config.YANDEXBROWSER_PATH;
     public WebDriver getWebDriver(String browserName) {
         WebDriver driver = null;
         switch(browserName) {

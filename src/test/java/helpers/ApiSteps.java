@@ -8,9 +8,9 @@ import static io.restassured.RestAssured.given;
 
 public class ApiSteps {
     private static User user;
-    private static String registerPath = Config.returnRegisterPath();
-    private static String loginPath = Config.returnLoginPath();
-    private static String userPath = Config.returnUserPath();
+    private static String registerPath = Config.CREATE_USER_PATH;
+    private static String loginPath = Config.LOGIN_USER_PATH;
+    private static String userPath = Config.USER_PATH;
 
     @Step("Create user via API")
     public static Response createUserAPI(String email, String password, String name) {

@@ -10,7 +10,7 @@ import pom.HomePage;
 
 public class BaseTest {
     protected WebDriver driver;
-    protected String baseUri = Config.returnBaseUri();
+    protected String baseUri = Config.BASE_URI;
     protected HomePage homePage;
 
     @Before
