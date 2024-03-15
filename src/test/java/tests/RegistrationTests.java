@@ -16,6 +16,7 @@ public class RegistrationTests extends BaseUserTest {
     @Test
     @DisplayName("Registration test")
     public void registrationTest() {
+        password = TestData.generateSuccessPassword();
         registrationPage.fillRegistrationData(name, email, password);
         registrationPage.waitForRegistrationButton();
         registrationPage.clickRegistration();
@@ -23,10 +24,21 @@ public class RegistrationTests extends BaseUserTest {
         Assert.assertNotNull("Login button should be present", element);
     }
 
+    @Test
+    public void createUserWrongPass() {
+        password = TestData.generateWrongPassword();
+        registrationPage.fillRegistrationData(name, email, password);
+        registrationPage.clickRegistration();
+        WebElement element = registrationPage.waitForIncorrectPassError();
+        Assert.assertNotNull("Incorrect password error should be present", element);
+    }
+
     @After
     public void loginAndDelete() {
         String token = ApiSteps.loginGetToken(email, password);
-        Response response = ApiSteps.deleteUser(token);
-        System.out.println(response.getBody().asString());
+        if(token!=null) {
+            Response response = ApiSteps.deleteUser(token);
+            System.out.println(response.getBody().asString());
+        }
     }
 }
