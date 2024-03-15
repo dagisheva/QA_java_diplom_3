@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PersonalAccountPage extends HomePage {
+public class PersonalAccountPage extends BasePage {
     private static final By profileLink = By.xpath(".//a[@href='/account/profile']");
     private static final By nameField = By.xpath(".//label[text()='Имя']/following-sibling::input");
     private static final By emailField = By.xpath(".//label[text()='Логин']/following-sibling::input");

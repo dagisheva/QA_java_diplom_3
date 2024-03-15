@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends HomePage {
+public class LoginPage extends BasePage {
     private final By registrationPage = By.className("Auth_link__1fOlj");
     private final By loginButton = By.xpath(".//button[text()='Войти']");
     private final By emailField = By.xpath(".//fieldset[1]/div/div/input");

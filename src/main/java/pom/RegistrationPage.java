@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RegistrationPage extends HomePage {
+public class RegistrationPage extends BasePage {
     private final By nameField = By.xpath(".//fieldset[1]/div/div/input");
     private final By emailField = By.xpath(".//fieldset[2]/div/div/input");
     private final By passwordField = By.xpath(".//fieldset[3]/div/div/input");
