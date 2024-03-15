@@ -14,7 +14,7 @@ public class PersonalAccountPage extends HomePage {
     private static final By testButton = By.xpath("");
 
     public PersonalAccountPage(WebDriver driver) {
-        HomePage.driver = driver;
+        super(driver);
     }
 
     @Step("Get login field value")

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage {
-    protected static WebDriver driver;
+    protected WebDriver driver;
     private final String parentPath = "/parent::div";
     private final String saucesTabPath = ".//span[text()='Соусы']";
     private final String fillingsTabPath = ".//span[text()='Начинки']";
@@ -29,11 +29,8 @@ public class HomePage {
     private final By saucesTabParent = By.xpath(saucesTabParentPath);
     private final By fillingsTabParent = By.xpath(fillingsTabParentPath);
 
-    public HomePage() {
-    }
-
     public HomePage(WebDriver driver) {
-        HomePage.driver = driver;
+        this.driver = driver;
     }
 
     public WebElement findElement(By element) {

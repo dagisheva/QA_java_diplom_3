@@ -14,7 +14,7 @@ public class RegistrationPage extends HomePage {
     private final By loginButton = By.xpath(".//a[text()='Войти']");
 
     public RegistrationPage(WebDriver driver) {
-        HomePage.driver = driver;
+        super(driver);
     }
 
     @Step("Fill name field")

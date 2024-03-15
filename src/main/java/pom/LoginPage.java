@@ -13,7 +13,7 @@ public class LoginPage extends HomePage {
     private final By restorePasswordButton = By.xpath(".//a[text()='Восстановить пароль']");
 
     public LoginPage(WebDriver driver) {
-        HomePage.driver = driver;
+        super(driver);
     }
 
 

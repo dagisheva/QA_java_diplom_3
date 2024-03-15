@@ -8,7 +8,7 @@ public class RestorePasswordPage extends HomePage {
     private final By loginButton = By.xpath(".//a[text()='Войти']");
 
     public RestorePasswordPage(WebDriver driver) {
-        HomePage.driver = driver;
+        super(driver);
     }
 
     @Step("Click login button RestorePassword page")
