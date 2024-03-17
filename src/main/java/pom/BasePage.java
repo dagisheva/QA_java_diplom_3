@@ -1,9 +1,8 @@
 package pom;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import helpers.CustomException;
+import io.qameta.allure.Step;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,6 +10,8 @@ import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver;
+    private final By constructorButton = By.xpath(".//a[@href='/']/p[text()='Конструктор']");
+    private final By logo = By.xpath(".//div/a[@href='/']");
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -23,15 +24,13 @@ public class BasePage {
         findElement(element).click();
     }
 
-    public org.openqa.selenium.WebElement waitForElementToBeVisible(By element) {
-        WebElement expectedElement = null;
+    public void CheckIfTransitionOccured(By element) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            expectedElement = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(element));
         } catch (TimeoutException e) {
-            System.out.println("Element with locator " + element + " not found within the specified timeout.");
+            throw new CustomException("The transition to the page did not occur or expected element didn't found");
         }
-        return expectedElement;
     }
 
 
@@ -44,5 +43,15 @@ public class BasePage {
     public String getFieldAttribute(By element, String attribute) {
         WebElement webElement = driver.findElement(element);
         return webElement.getAttribute(attribute);
+    }
+
+    @Step("Click Constructor button")
+    public void clickConstructorButton() {
+        clickOnElement(constructorButton);
+    }
+
+    @Step("Click Logo button")
+    public void clickLogoButton() {
+        clickOnElement(logo);
     }
 }

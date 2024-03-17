@@ -3,7 +3,6 @@ package pom;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class RegistrationPage extends BasePage {
     private final By nameField = By.xpath(".//fieldset[1]/div/div/input");
@@ -45,8 +44,8 @@ public class RegistrationPage extends BasePage {
     }
 
     @Step("Wait for incorrect password error")
-    public WebElement waitForIncorrectPassError() {
-        return waitForElementToBeVisible(wrongPassError);
+    public void CheckWrongPassError() {
+        CheckIfTransitionOccured(wrongPassError);
     }
 
     @Step("Click login button RegistrationPage")
@@ -55,7 +54,7 @@ public class RegistrationPage extends BasePage {
     }
 
     @Step("Wait for Registration button")
-    public WebElement waitForRegistrationButton() {
-        return waitForElementToBeVisible(registrationButton);
+    public void waitForRegistrationButton() {
+        CheckIfTransitionOccured(registrationButton);
     }
 }

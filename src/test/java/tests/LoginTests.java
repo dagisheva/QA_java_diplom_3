@@ -1,9 +1,7 @@
 package tests;
 
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 import pom.LoginPage;
 import pom.RegistrationPage;
 import pom.RestorePasswordPage;
@@ -11,7 +9,6 @@ import tests.setup.BaseLoginTest;
 
 public class LoginTests extends BaseLoginTest {
     private LoginPage loginPage;
-    private WebElement element;
 
 
     @Test
@@ -20,8 +17,7 @@ public class LoginTests extends BaseLoginTest {
         homePage.clickLoginButton();
         loginPage = new LoginPage(driver);
         loginPage.fillLoginDataAndLogin(email, password);
-        element = homePage.waitForOrderButton();
-        Assert.assertNotNull("Order button should be present", element);
+        homePage.checkHomePageWithOrderButton();
     }
 
     @Test
@@ -30,8 +26,7 @@ public class LoginTests extends BaseLoginTest {
         homePage.clickPersonalAccountButton();
         loginPage = new LoginPage(driver);
         loginPage.fillLoginDataAndLogin(email, password);
-        element = homePage.waitForOrderButton();
-        Assert.assertNotNull("Order button should be present", element);
+        homePage.checkHomePageWithOrderButton();
     }
 
     @Test
@@ -43,8 +38,7 @@ public class LoginTests extends BaseLoginTest {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.clickLoginButtonRegistrationPage();
         loginPage.fillLoginDataAndLogin(email, password);
-        element = homePage.waitForOrderButton();
-        Assert.assertNotNull("Order button should be present", element);
+        homePage.checkHomePageWithOrderButton();
     }
 
     @Test
@@ -56,7 +50,6 @@ public class LoginTests extends BaseLoginTest {
         RestorePasswordPage restorePage = new RestorePasswordPage(driver);
         restorePage.clickLoginRestorePass();
         loginPage.fillLoginDataAndLogin(email, password);
-        element = homePage.waitForOrderButton();
-        Assert.assertNotNull("Order button should be present", element);
+        homePage.checkHomePageWithOrderButton();
     }
 }

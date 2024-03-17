@@ -5,9 +5,7 @@ import helpers.TestData;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 import tests.setup.BaseUserTest;
 
 public class RegistrationTests extends BaseUserTest {
@@ -20,8 +18,7 @@ public class RegistrationTests extends BaseUserTest {
         registrationPage.fillRegistrationData(name, email, password);
         registrationPage.waitForRegistrationButton();
         registrationPage.clickRegistration();
-        WebElement element = loginPage.waitForLoginButton();
-        Assert.assertNotNull("Login button should be present", element);
+        loginPage.checkLoginPage();
     }
 
     @Test
@@ -29,8 +26,7 @@ public class RegistrationTests extends BaseUserTest {
         password = TestData.generateWrongPassword();
         registrationPage.fillRegistrationData(name, email, password);
         registrationPage.clickRegistration();
-        WebElement element = registrationPage.waitForIncorrectPassError();
-        Assert.assertNotNull("Incorrect password error should be present", element);
+        registrationPage.CheckWrongPassError();
     }
 
     @After

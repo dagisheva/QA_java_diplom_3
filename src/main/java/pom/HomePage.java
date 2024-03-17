@@ -2,10 +2,6 @@ package pom;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class HomePage extends BasePage{
     protected WebDriver driver;
@@ -19,8 +15,6 @@ public class HomePage extends BasePage{
     private final By personalAccountButton = By.xpath(".//a[@href='/account']");
     private final By loginAccountButton = By.xpath(".//button[text()='Войти в аккаунт']");
     private final By orderButton = By.xpath(".//button[text()='Оформить заказ']");
-    private final By constructorButton = By.xpath(".//a[@href='/']/p[text()='Конструктор']");
-    private final By logo = By.xpath(".//div/a[@href='/']");
     private final By constructBurger = By.xpath(".//section[@class='BurgerIngredients_ingredients__1N8v2']");
     private final By bunsTab = By.xpath(bunsTabPath);
     private final By sauceTab = By.xpath(saucesTabPath);
@@ -74,27 +68,16 @@ public class HomePage extends BasePage{
     }
 
     @Step("Wait for Order button")
-    public WebElement waitForOrderButton() {
-        return waitForElementToBeVisible(orderButton);
+    public void checkHomePageWithOrderButton() {
+        CheckIfTransitionOccured(orderButton);
     }
 
     @Step("Wait for PersonalAccoutn button")
     public void waitForPersonalAccountButton() {
-        waitForElementToBeVisible(personalAccountButton);
+        CheckIfTransitionOccured(personalAccountButton);
     }
-
-    @Step("Click Constructor button")
-    public void clickConstructorButton() {
-        clickOnElement(constructorButton);
-    }
-
-    @Step("Click Logo button")
-    public void clickLogoButton() {
-        clickOnElement(logo);
-    }
-
     @Step("Wait for constructBurgerElement")
-    public WebElement waitForConstructBurgerElement() {
-        return waitForElementToBeVisible(constructBurger);
+    public void checkHomePageWithConstructBurgerElement() {
+        CheckIfTransitionOccured(constructBurger);
     }
 }

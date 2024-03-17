@@ -12,10 +12,10 @@ public class BaseTest {
     protected WebDriver driver;
     protected String baseUri = Config.BASE_URI;
     protected HomePage homePage;
-
+    /*System.getProperty("property"*/
     @Before
     public void startUp() {
-        driver = new Browser().getWebDriver(System.getProperty("property"));
+        driver = new Browser().getWebDriver("chrome");
         driver.get(baseUri);
         RestAssured.baseURI = baseUri;
         homePage = new HomePage(driver);

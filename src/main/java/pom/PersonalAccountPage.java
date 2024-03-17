@@ -3,7 +3,6 @@ package pom;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class PersonalAccountPage extends BasePage {
     private static final By profileLink = By.xpath(".//a[@href='/account/profile']");
@@ -29,12 +28,12 @@ public class PersonalAccountPage extends BasePage {
 
     @Step("Wait for fields")
     public void waitForNameField() {
-        waitForElementToBeVisible(nameField);
+        CheckIfTransitionOccured(nameField);
     }
 
     @Step("Get classSet")
     public void waitProfileLink() {
-        waitForElementToBeVisible(profileLink);
+        CheckIfTransitionOccured(profileLink);
     }
 
     @Step("Click exit button")
@@ -42,15 +41,15 @@ public class PersonalAccountPage extends BasePage {
         clickOnElement(exitButton);
     }
 
-    public WebElement waitForExitButton() {
-        return waitForElementToBeVisible(exitButton);
+    public void waitForExitButton() {
+        CheckIfTransitionOccured(exitButton);
     }
 
-    public WebElement waitForSaveButton() {
-        return waitForElementToBeVisible(saveButton);
+    public void waitForSaveButton() {
+        CheckIfTransitionOccured(saveButton);
     }
 
-    public WebElement waitForTestButton() {
-        return waitForElementToBeVisible(testButton);
+    public void waitForTestButton() {
+        CheckIfTransitionOccured(testButton);
     }
 }

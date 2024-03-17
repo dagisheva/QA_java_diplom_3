@@ -3,7 +3,6 @@ package pom;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
     private final By registrationPage = By.className("Auth_link__1fOlj");
@@ -23,8 +22,8 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Wait for Login button to be visible")
-    public WebElement waitForLoginButton() {
-        return waitForElementToBeVisible(loginButton);
+    public void checkLoginPage() {
+        CheckIfTransitionOccured(loginButton);
     }
 
     @Step("Fill email field")
