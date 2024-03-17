@@ -24,7 +24,7 @@ public class BasePage {
         findElement(element).click();
     }
 
-    public void CheckIfTransitionOccured(By element) {
+    public void checkIfTransitionOccured(By element) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOfElementLocated(element));
