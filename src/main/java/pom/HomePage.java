@@ -69,15 +69,15 @@ public class HomePage extends BasePage{
 
     @Step("Wait for Order button")
     public void checkHomePageWithOrderButton() {
-        CheckIfTransitionOccured(orderButton);
+        checkIfTransitionOccured(orderButton);
     }
 
     @Step("Wait for PersonalAccoutn button")
     public void waitForPersonalAccountButton() {
-        CheckIfTransitionOccured(personalAccountButton);
+        checkIfTransitionOccured(personalAccountButton);
     }
     @Step("Wait for constructBurgerElement")
     public void checkHomePageWithConstructBurgerElement() {
-        CheckIfTransitionOccured(constructBurger);
+        checkIfTransitionOccured(constructBurger);
     }
 }

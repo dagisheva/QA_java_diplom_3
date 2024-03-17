@@ -28,12 +28,12 @@ public class PersonalAccountPage extends BasePage {
 
     @Step("Wait for fields")
     public void waitForNameField() {
-        CheckIfTransitionOccured(nameField);
+        checkIfTransitionOccured(nameField);
     }
 
     @Step("Get classSet")
     public void waitProfileLink() {
-        CheckIfTransitionOccured(profileLink);
+        checkIfTransitionOccured(profileLink);
     }
 
     @Step("Click exit button")
@@ -42,14 +42,14 @@ public class PersonalAccountPage extends BasePage {
     }
 
     public void waitForExitButton() {
-        CheckIfTransitionOccured(exitButton);
+        checkIfTransitionOccured(exitButton);
     }
 
     public void waitForSaveButton() {
-        CheckIfTransitionOccured(saveButton);
+        checkIfTransitionOccured(saveButton);
     }
 
     public void waitForTestButton() {
-        CheckIfTransitionOccured(testButton);
+        checkIfTransitionOccured(testButton);
     }
 }

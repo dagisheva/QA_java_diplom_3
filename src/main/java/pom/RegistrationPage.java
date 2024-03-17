@@ -45,7 +45,7 @@ public class RegistrationPage extends BasePage {
 
     @Step("Wait for incorrect password error")
     public void CheckWrongPassError() {
-        CheckIfTransitionOccured(wrongPassError);
+        checkIfTransitionOccured(wrongPassError);
     }
 
     @Step("Click login button RegistrationPage")
@@ -55,6 +55,6 @@ public class RegistrationPage extends BasePage {
 
     @Step("Wait for Registration button")
     public void waitForRegistrationButton() {
-        CheckIfTransitionOccured(registrationButton);
+        checkIfTransitionOccured(registrationButton);
     }
 }

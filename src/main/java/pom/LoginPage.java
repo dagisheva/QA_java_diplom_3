@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
 
     @Step("Wait for Login button to be visible")
     public void checkLoginPage() {
-        CheckIfTransitionOccured(loginButton);
+        checkIfTransitionOccured(loginButton);
     }
 
     @Step("Fill email field")
